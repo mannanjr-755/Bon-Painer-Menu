@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "prisma generate",
+    "db:push": "dotenv -e ../.env -- prisma db push",
+    "db:seed": "dotenv -e ../.env -- tsx prisma/seed.ts",
+    "db:studio": "dotenv -e ../.env -- prisma studio",
+    "db:reset": "dotenv -e ../.env -- prisma db push --force-reset && dotenv -e ../.env -- tsx prisma/seed.ts"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
+    "@prisma/adapter-neon": "^6.19.3",
+    "@prisma/client": "^6.19.3",
+    "@vercel/blob": "^2.8.0",
+    "bcryptjs": "^3.0.3",
+    "next": "16.3.6",
+    "next-auth": "^5.0.0-beta.32",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "prisma": "^6.19.3",
+    "tsx": "^4.23.12",
+    "typescript": "^5"
+  }
+}
